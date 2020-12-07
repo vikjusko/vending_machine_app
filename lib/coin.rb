@@ -9,4 +9,10 @@ class Coin
     @value = value
     @quantity = quantity
   end
+
+  def valid?
+    raise 'Invalid coin' unless VALID_COINS.include?(@value)
+
+    VALID_COINS.include?(@value)
+  end
 end
