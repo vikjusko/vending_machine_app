@@ -10,6 +10,13 @@
 * There should be a way of reloading either products or change at a later point
 * The machine should keep track of the products and change what it contains
 
+
+## Chosen option:
+
+* I have opted to spend more time on this test ( option 2: 4/5 hours ).
+* I have indeed spend about 4.5 hours creating code and about 2 hours planning on how to create the classes, methods and execute the functionality in the simplest way
+
+
 ## User manual:
 
 1) Please clone it repository to your local device (make sure you have Bundler and Ruby installed to start running this application)
