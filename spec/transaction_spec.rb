@@ -25,5 +25,9 @@ describe Transaction do
       purchase.place_order(12)
       expect(purchase.place_order(12)).to eq("Sorry, we don't sell this item 😳! Let's try again")
     end
-	end
+
+	    it "let's a clinet know if the chosen item is out of stock" do
+      expect(purchase.place_order(5)).to eq('We are so sorry, this item is sold out!😩')
+    end
+  end
 end
