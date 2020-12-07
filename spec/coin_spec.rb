@@ -11,5 +11,10 @@ describe Coin do
     it 'confirms if a coin is valid' do
       expect(coin).to be_valid
     end
+
+    it 'throws an error if the coin is not valid' do
+      coin2 = Coin.new(0.15)
+      expect { coin2.valid? }.to raise_error 'Invalid coin'
+    end
   end
 end
