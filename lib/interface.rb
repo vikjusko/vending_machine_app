@@ -34,9 +34,9 @@ class Interface
 
   def payment_due
     p 'Please, start again and insert more money next time ☺️'
-	end
-	
-	  def invalid_selection
+  end
+
+  def invalid_selection
     p "Sorry, we don't sell this item 😳! Let's try again"
   end
 
