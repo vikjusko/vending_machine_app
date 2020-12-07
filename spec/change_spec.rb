@@ -23,4 +23,9 @@ describe Change do
       expect(change.accept_coin(100, 5)).to eq 35
     end
   end
+  describe '#issue_change' do
+    it 'returns correct change' do
+      expect(change.issue_change([50, 50], 70)).to eq '20p, 10p'
+    end
+  end
 end
