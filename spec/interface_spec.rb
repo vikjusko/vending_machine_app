@@ -28,5 +28,11 @@ end
       items = instance_double('items', list: [item])
       expect(subject.item_list(items)).to eq('Coca-Cola is SOLD out, sorry!😣')
     end
+	end
+	
+	describe "#request payment" do
+  it "requests for a payment in a correct format" do
+    expect(subject.request_payment).to eq("Please insert coins, we take 1p, 2p, 5p, 10p, 20p, 50p, 100p and 200p!")
   end
+end
 end
