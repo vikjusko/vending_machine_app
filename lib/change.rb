@@ -9,6 +9,15 @@ class Change
     @coins = coin_supply
   end
 
+  def issue_coin(denomination, amount)
+    coin_index = nil
+    @coins.each_with_index do |coin, index|
+      coin_index = index if coin.value == denomination
+    end
+    coin = @coins[coin_index]
+    coin.refund(amount)
+  end
+
   private
 
   def coin_supply
