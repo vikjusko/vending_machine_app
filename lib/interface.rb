@@ -20,6 +20,10 @@ class Interface
     end
   end
 
+  def put_in_code
+    p 'Please select the snack code'
+  end
+
   def request_payment
     p 'Please insert coins, we take 1p, 2p, 5p, 10p, 20p, 50p, 100p and 200p!'
   end

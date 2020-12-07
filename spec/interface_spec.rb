@@ -37,4 +37,10 @@ describe Interface do
       expect(subject.request_payment).to eq('Please insert coins, we take 1p, 2p, 5p, 10p, 20p, 50p, 100p and 200p!')
     end
   end
+
+  describe '#put_in code' do
+    it 'promts a user to select the item code' do
+      expect(subject.put_in_code).to eq('Please select the snack code')
+    end
+  end
 end
