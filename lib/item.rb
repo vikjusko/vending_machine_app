@@ -12,9 +12,9 @@ class Item
 
   def sell
     @quantity -= 1
-	end
-	
-	def restock(amount)
-  	@quantity += amount
-	end
+  end
+
+  def restock(amount)
+    @quantity += amount
+  end
 end
