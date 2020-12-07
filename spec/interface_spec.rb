@@ -78,5 +78,11 @@ describe Interface do
     it 'promts the user to start again' do
       expect(subject.payment_due).to eq 'Please, start again and insert more money next time ☺️'
     end
-  end
+	end
+	
+	describe "#invalid_selection" do 
+		it "lets the user know that such selection does not exist" do 
+			expect(subject.invalid_selection).to eq "Sorry, we don't sell this item 😳! Let's try again"
+		end
+	end
 end
