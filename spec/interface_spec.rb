@@ -67,7 +67,7 @@ describe Interface do
 
   describe '#confirmation_status' do
     it 'asks a customer to either confrim finishing insertin coins or continue' do
-      expect(subject.confirmation_status).to eq 'Please select yes if you have put it enough money, no to continue inserting coins'
+			expect(subject.confirmation_status).to eq 'Please select yes if you have put in enough money, no to continue inserting coins'
     end
   end
 

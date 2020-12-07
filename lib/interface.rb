@@ -41,7 +41,7 @@ class Interface
   end
 
   def confirmation_status
-    p 'Please select yes if you have put it enough money, no to continue inserting coins'
+    p 'Please select yes if you have put in enough money, no to continue inserting coins'
   end
 
   def take_your_item(item)
