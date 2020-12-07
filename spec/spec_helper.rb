@@ -18,7 +18,7 @@ require 'simplecov-console'
 #
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
                                                                  SimpleCov::Formatter::Console,
-                                                                 SimpleCov::Formatter::HTMLFormatter,
+                                                                 SimpleCov::Formatter::HTMLFormatter
                                                                ])
 SimpleCov.start
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
