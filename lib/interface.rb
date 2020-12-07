@@ -13,9 +13,9 @@ class Interface
     puts 'Take a look at our selection: '
     items.list.each do |item|
       if item.quantity.positive?
-        return "Code: 0#{item.code}, name: #{item.name}, price: #{item.price} quantity: #{item.quantity}."
+        puts "Code: 0#{item.code}, name: #{item.name}, price: #{item.price} quantity: #{item.quantity}."
       else
-        return "#{item.name} is SOLD out, sorry!😣"
+        puts "#{item.name} is SOLD out, sorry!😣"
       end
     end
   end
