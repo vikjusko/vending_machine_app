@@ -12,7 +12,7 @@ end
 
 	  describe '#instruction message' do
     it 'prints out the instruction message' do
-      expect(subject.instructions).to eq("To buy a snack, please enter it's code and insert correct amount of coins!🪙🪙🪙")
+      expect(subject.instructions).to eq("To buy a snack, please insert some coins and then confirm the the item code!🪙🪙🪙")
     end
   end
 end
