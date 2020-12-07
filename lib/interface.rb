@@ -28,6 +28,10 @@ class Interface
     p 'Please insert coins, we take 1p, 2p, 5p, 10p, 20p, 50p, 100p and 200p!'
   end
 
+	def confirmation_status
+  p "Please select yes if you have put it enough money, no to continue inserting coins"
+end
+
   def take_your_item(item)
     p "Please collect your #{item.name}"
   end

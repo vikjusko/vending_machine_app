@@ -61,5 +61,11 @@ describe Interface do
     it 'notifies that the user is due no change' do
       expect(subject.no_change_due).to eq "We don't owe you any change,BYE!😉"
     end
-  end
+	end
+	
+	describe "#confirmation_status" do
+		it "asks a customer to either confrim finishing insertin coins or continue" do 
+		expect(subject.confirmation_status).to eq "Please select yes if you have put it enough money, no to continue inserting coins"
+		end
+	end
 end
