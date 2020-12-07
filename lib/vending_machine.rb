@@ -18,7 +18,8 @@ class VendingMachine
     @transaction = Transaction.new
   end
 
-  def start
+	def start
+	
     @interface.welcome
     @interface.item_list(@items)
     @interface.instructions
@@ -54,7 +55,7 @@ class VendingMachine
     if VALID_COINS.include?(coin.to_i)
       @transaction.add_funds([coin.to_i])
     else
-      'Please only used valid coins'
+      'Please only use valid coins'
     end
   end
 end
