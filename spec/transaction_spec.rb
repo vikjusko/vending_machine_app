@@ -35,11 +35,15 @@ describe Transaction do
     it 'can add coins to funds' do
       purchase.add_funds([50, 50, 50])
       expect(purchase.funds).to eq [50, 50, 50]
-		end
-		
-		it "can add coins to funds" do
-  		purchase.add_funds([20])
-  		expect(purchase.funds).to eq [20]
-		end
+    end
+
+    it 'can add coins to funds' do
+      purchase.add_funds([20])
+      expect(purchase.funds).to eq [20]
+    end
+
+    it 'can notify if the inserted coins are incorrect' do
+      expect(purchase.add_funds([30])).to eq 'Please only use valid coins'
+    end
   end
 end
