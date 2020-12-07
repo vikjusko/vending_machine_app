@@ -42,5 +42,12 @@ describe Interface do
     it 'promts a user to select the item code' do
       expect(subject.put_in_code).to eq('Please select the snack code')
     end
+	end
+	
+	describe "#take_your item" do
+  it "notifies a user that their item is ready for collection" do
+    item = double("item", code: 0o2, name: "Fanta", price: 2.00, quantity: 12)
+    expect(subject.take_your_item(item)).to eq("Please collect your Fanta")
   end
+end
 end
