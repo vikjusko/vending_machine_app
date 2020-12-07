@@ -46,4 +46,19 @@ describe Transaction do
       expect(purchase.add_funds([30])).to eq 'Please only use valid coins'
     end
   end
+
+  describe '#issue with change' do
+    it 'can issue the item when there are substantial files and correct choice' do
+      purchase.add_funds([50, 50, 50, 50])
+      purchase.place_order(1)
+      expect(purchase.issue_with_change).to eq "Please, don't forget your change: £1, 10p, 5p!"
+    end
+  end
+  describe '#issue_order_item' do
+    it 'can confirm what item the custome is getting' do
+      purchase.add_funds([50, 50, 50, 50])
+      purchase.place_order(1)
+      expect(purchase.issue_order_item).to eq 'Please collect your Coca-Cola'
+    end
+  end
 end
