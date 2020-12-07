@@ -22,7 +22,11 @@ end
       items = double('items', list: [item])
       expect(subject.item_list(items)).to eq 'Code: 01, name: Coca-Cola, price: 100 quantity: 10.'
 		end
-	end
 
-
+     it 'prints out a sold out message if the item is not in stock' do
+      item = instance_double('item', code: 1, name: 'Coca-Cola', price: 100, quantity: 0)
+      items = instance_double('items', list: [item])
+      expect(subject.item_list(items)).to eq('Coca-Cola is SOLD out, sorry!😣')
+    end
+  end
 end
