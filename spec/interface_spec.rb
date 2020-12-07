@@ -50,4 +50,10 @@ describe Interface do
     expect(subject.take_your_item(item)).to eq("Please collect your Fanta")
   end
 end
+
+describe "#take_your_change" do
+  it "notifies a user that their change is ready to be collected" do
+    expect(subject.take_your_change("20p")).to eq "Please, don't forget your change: 20p!"
+  end
+end
 end

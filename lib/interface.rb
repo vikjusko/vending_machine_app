@@ -31,4 +31,8 @@ class Interface
 	def take_your_item(item)
   	p "Please collect your #{item.name}"
 	end
+
+def take_your_change(change)
+  p "Please, don't forget your change: #{change}!"
+end
 end
