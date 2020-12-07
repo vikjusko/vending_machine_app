@@ -26,5 +26,9 @@ class Interface
 
   def request_payment
     p 'Please insert coins, we take 1p, 2p, 5p, 10p, 20p, 50p, 100p and 200p!'
-  end
+	end
+	
+	def take_your_item(item)
+  	p "Please collect your #{item.name}"
+	end
 end
