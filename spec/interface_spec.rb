@@ -14,7 +14,7 @@ describe Interface do
 
   describe '#instruction message' do
     it 'prints out the instruction message' do
-      expect(subject.instructions).to eq("To buy a snack, please insert some coins and then confirm the the item code!\u{1FA99}\u{1FA99}\u{1FA99}")
+      expect(subject.instructions).to eq("To buy a snack, please insert some coins and then confirm the the item code!")
     end
   end
 
