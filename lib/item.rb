@@ -10,4 +10,8 @@ def initialize(code, name, price, quantity)
   @price = price
   @quantity = quantity
 end
+
+def sell
+  @quantity -= 1
+end
 end
