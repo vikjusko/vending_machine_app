@@ -21,7 +21,8 @@ end
       item = double('item', code: 1, name: 'Coca-Cola', price: 100, quantity: 10)
       items = double('items', list: [item])
       expect(subject.item_list(items)).to eq 'Code: 01, name: Coca-Cola, price: 100 quantity: 10.'
-    end
+		end
+	end
 
 
 end
