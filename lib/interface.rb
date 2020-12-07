@@ -1,15 +1,16 @@
-class Interface
-	  def welcome
-    p "Hey there, someone's hungry?!🍫🍿🙈\nGo on then, make your choice!"
-	end
-	
-	  def instructions
-    p "To buy a snack, please insert some coins and then confirm the the item code!🪙🪙🪙"
-	end
-	
+# frozen_string_literal: true
 
-	  def item_list(items)
-    puts'Take a look at our selection: '
+class Interface
+  def welcome
+    p "Hey there, someone's hungry?!🍫🍿🙈\nGo on then, make your choice!"
+  end
+
+  def instructions
+    p "To buy a snack, please insert some coins and then confirm the the item code!\u{1FA99}\u{1FA99}\u{1FA99}"
+  end
+
+  def item_list(items)
+    puts 'Take a look at our selection: '
     items.list.each do |item|
       if item.quantity.positive?
         return "Code: 0#{item.code}, name: #{item.name}, price: #{item.price} quantity: #{item.quantity}."
@@ -18,4 +19,8 @@ class Interface
       end
     end
   end
-end 
+
+  def request_payment
+    p 'Please insert coins, we take 1p, 2p, 5p, 10p, 20p, 50p, 100p and 200p!'
+  end
+end
