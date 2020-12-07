@@ -22,24 +22,23 @@ class Interface
 
   def put_in_code
     p 'Please select the snack code'
-	end
-	
-	  def sold_out
-    	p 'We are so sorry, this item is sold out!😩'
-  	end
+  end
+
+  def sold_out
+    p 'We are so sorry, this item is sold out!😩'
+  end
 
   def request_payment
     p 'Please insert coins, we take 1p, 2p, 5p, 10p, 20p, 50p, 100p and 200p!'
-	end
-	
-	  def payment_due
-    	p 'Please, start again and insert more money next time ☺️'
-  	end
+  end
 
+  def payment_due
+    p 'Please, start again and insert more money next time ☺️'
+  end
 
-	def confirmation_status
-  p "Please select yes if you have put it enough money, no to continue inserting coins"
-end
+  def confirmation_status
+    p 'Please select yes if you have put it enough money, no to continue inserting coins'
+  end
 
   def take_your_item(item)
     p "Please collect your #{item.name}"

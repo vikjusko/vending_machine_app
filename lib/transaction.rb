@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 require_relative './items'
 require_relative './change'
@@ -14,5 +15,5 @@ class Transaction
     @change = change
     @interface = interface
     @funds = []
-	end
+  end
 end

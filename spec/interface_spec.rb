@@ -61,23 +61,22 @@ describe Interface do
     it 'notifies that the user is due no change' do
       expect(subject.no_change_due).to eq "We don't owe you any change,BYE!😉"
     end
-	end
-	
-	describe "#confirmation_status" do
-		it "asks a customer to either confrim finishing insertin coins or continue" do 
-		expect(subject.confirmation_status).to eq "Please select yes if you have put it enough money, no to continue inserting coins"
-		end
-	end
+  end
 
-	  describe '#sold_out message' do
+  describe '#confirmation_status' do
+    it 'asks a customer to either confrim finishing insertin coins or continue' do
+      expect(subject.confirmation_status).to eq 'Please select yes if you have put it enough money, no to continue inserting coins'
+    end
+  end
+
+  describe '#sold_out message' do
     it 'prints out sold_out message' do
       expect(subject.sold_out).to eq('We are so sorry, this item is sold out!😩')
     end
-	end
-	describe "#payment_due" do
-		it "promts the user to start again" do 
-			expect(subject.payment_due).to eq "Please, start again and insert more money next time ☺️"
-		end 
-	end
-
+  end
+  describe '#payment_due' do
+    it 'promts the user to start again' do
+      expect(subject.payment_due).to eq 'Please, start again and insert more money next time ☺️'
+    end
+  end
 end
