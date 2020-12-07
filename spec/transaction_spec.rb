@@ -29,16 +29,21 @@ describe Transaction do
     it "let's a clinet know if the chosen item is out of stock" do
       expect(purchase.place_order(5)).to eq('We are so sorry, this item is sold out!😩')
     end
-	end
-	
-	describe "#enough money" do
-		it "is false if the amount of funds is not enough to purchase an item" do
-			purchase.add_funds([50])
-			purchase.place_order(1)
-			expect(purchase.enough_money).to be false
-		end
-	end
+  end
 
+  describe '#enough money' do
+    it 'is false if the amount of funds is not enough to purchase an item' do
+      purchase.add_funds([50])
+      purchase.place_order(1)
+      expect(purchase.enough_money).to be false
+    end
+
+    it 'is true if the amount of funds is not enough to purchase an item' do
+      purchase.add_funds([200])
+      purchase.place_order(1)
+      expect(purchase.enough_money).to be true
+    end
+  end
 
   describe '#add_funds' do
     it 'can add coins to funds' do
@@ -69,13 +74,13 @@ describe Transaction do
       purchase.place_order(1)
       expect(purchase.issue_order_item).to eq 'Please collect your Coca-Cola'
     end
-	end
-	
-	describe "#issue_change" do 
-	  it 'can confirm if there is no change due' do
-    purchase.add_funds([50, 20, 10, 5])
-    purchase.place_order(1)
-		expect(purchase.issue_change).to eq("We don't owe you any change,BYE!😉")
-		end
+  end
+
+  describe '#issue_change' do
+    it 'can confirm if there is no change due' do
+      purchase.add_funds([50, 20, 10, 5])
+      purchase.place_order(1)
+      expect(purchase.issue_change).to eq("We don't owe you any change,BYE!😉")
+    end
   end
 end
