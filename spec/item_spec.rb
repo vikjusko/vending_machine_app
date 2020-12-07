@@ -1,3 +1,3 @@
-require "./item"
+require "item"
 describe Item do 
 end 
