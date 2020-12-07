@@ -20,7 +20,7 @@ describe Coin do
 	
 	describe "#insert_amount" do
 		it "updates the coin quanity" do 
-			coin.insert_amount(20)
+			coin.insert(20)
 			expect(coin.quantity).to eq 50
 		end
 	end
