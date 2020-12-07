@@ -6,7 +6,7 @@ class Interface
   end
 
   def instructions
-    p "To buy a snack, please insert some coins and then confirm the the item code!"
+    p 'To buy a snack, please insert some coins and then confirm the the item code!'
   end
 
   def item_list(items)
