@@ -15,5 +15,11 @@ describe Transaction do
 	    it 'is initialized by a change that is also an array' do
       expect(purchase.change).to be_an_instance_of(Change)
     end
-  end
+	end
+	
+	  describe '#place an order' do
+    it "lets someone place an order once they've chosen an item" do
+      expect(purchase.place_order(1)).to eq('Please, start again and insert more money next time ☺️')
+    end
+	end
 end
