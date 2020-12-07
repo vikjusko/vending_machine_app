@@ -14,7 +14,7 @@ describe Interface do
 
   describe '#instruction message' do
     it 'prints out the instruction message' do
-      expect(subject.instructions).to eq('To buy a snack, please insert some coins and then confirm the the item code!')
+      expect(subject.instructions).to eq('To buy a snack, please insert some coins and then confirm the item code!')
     end
   end
 
@@ -22,13 +22,15 @@ describe Interface do
     it 'prints out an item list' do
       item = double('item', code: 1, name: 'Coca-Cola', price: 100, quantity: 10)
       items = double('items', list: [item])
-      expect(subject.item_list(items)).to eq 'Code: 01, name: Coca-Cola, price: 100 quantity: 10.'
+      subject.item_list(items)
+      expect($stdout).to have_received(:puts).exactly(2).times
     end
 
     it 'prints out a sold out message if the item is not in stock' do
       item = instance_double('item', code: 1, name: 'Coca-Cola', price: 100, quantity: 0)
       items = instance_double('items', list: [item])
-      expect(subject.item_list(items)).to eq('Coca-Cola is SOLD out, sorry!😣')
+      subject.item_list(items)
+      expect($stdout).to have_received(:puts).exactly(2).times
     end
   end
 

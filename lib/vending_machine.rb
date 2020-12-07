@@ -18,8 +18,7 @@ class VendingMachine
     @transaction = Transaction.new
   end
 
-	def start
-	
+  def start
     @interface.welcome
     @interface.item_list(@items)
     @interface.instructions

@@ -6,7 +6,7 @@ class Interface
   end
 
   def instructions
-    p 'To buy a snack, please insert some coins and then confirm the the item code!'
+    p 'To buy a snack, please insert some coins and then confirm the item code!'
   end
 
   def item_list(items)
@@ -15,7 +15,7 @@ class Interface
       if item.quantity.positive?
         puts "Code: 0#{item.code}, name: #{item.name}, price: #{item.price} quantity: #{item.quantity}."
       else
-        puts "#{item.name} is SOLD out, sorry!😣"
+        puts "Code: 0#{item.code}. #{item.name} is SOLD out, sorry!😣"
       end
     end
   end

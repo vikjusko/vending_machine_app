@@ -32,6 +32,13 @@ ruby snack_away.rb
 ```
 "Hey there, someone's hungry?!🍫🍿🙈\nGo on then, make your choice!"
 Take a look at our selection: 
+Code: 01, name: Coca-Cola, price: 85 quantity: 10.
+Code: 02, name: Fanta, price: 100 quantity: 12.
+Code: 03, name: Diet-Coke, price: 150 quantity: 8.
+Code: 04, name: Dr. Pepper, price: 100 quantity: 9.
+Evian is SOLD out, sorry!😣
+Code: 06, name: Maltesers, price: 200 quantity: 4.
+Code: 07, name: Skittles, price: 85 quantity: 1.
 "To buy a snack, please insert some coins and then confirm the the item code!"
 "Please insert coins, we take 1p, 2p, 5p, 10p, 20p, 50p, 100p and 200p!"
 
