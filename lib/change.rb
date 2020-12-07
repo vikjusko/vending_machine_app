@@ -3,9 +3,24 @@
 require_relative './coin'
 
 class Change
-  let(:change) { described_class.new }
+  attr_reader :coins
 
-  it 'is initialized by coin supply that is an array' do
-    expect(change.coins).to be_an Array
+  def initialize
+    @coins = coin_supply
+  end
+
+  private
+
+  def coin_supply
+    [
+      Coin.new(200),
+      Coin.new(100),
+      Coin.new(50),
+      Coin.new(20),
+      Coin.new(10),
+      Coin.new(5),
+      Coin.new(2),
+      Coin.new(1)
+    ]
   end
 end
