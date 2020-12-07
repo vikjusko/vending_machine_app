@@ -6,6 +6,9 @@ require_relative "./interface"
 require_relative "./transaction"
 
 class VendingMachine
+
+VALID_COINS = [200, 100, 50, 20, 10, 5, 2, 1]
+
   attr_reader :items, :change, :profit, :interface, :selection, :transaction
 
   def initialize(itemsClass = Items, changeClass = Change, interfaceClass = Interface)
@@ -21,7 +24,7 @@ class VendingMachine
     @interface.item_list(@items)
     @interface.instructions
     @interface.request_payment
-    add_coin(gets.chomp)
+		p add_coin(gets.chomp)
     @interface.confirmation_status
     while gets.chomp != "yes" 
 			@interface.request_payment
@@ -37,7 +40,7 @@ class VendingMachine
 		item.restock(amount)
 	end
 
-	def add_more_change(denomination, amount)
+	def reload_change(denomination, amount)
 		coin_index = nil
 		@change.coins.each_with_index do |coin, index|
   	coin_index = index if coin.value == denomination
@@ -49,7 +52,14 @@ class VendingMachine
 
   private
 
-  def add_coin(coin)
-    @transaction.add_funds([coin.to_i])
+	def add_coin(coin)
+		if VALID_COINS.include?(coin.to_i) 
+			@transaction.add_funds([coin.to_i])
+		else 
+			return	"Please only used valid coins"
+		end
   end
 end
+
+
+
