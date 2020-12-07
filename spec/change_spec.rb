@@ -27,5 +27,9 @@ describe Change do
     it 'returns correct change' do
       expect(change.issue_change([50, 50], 70)).to eq '20p, 10p'
     end
+
+    it 'raises error if money that has been provided is not enough' do
+      expect { change.issue_change([50, 20], 80) }.to raise_error 'Not enough money, sorry'
+    end
   end
 end
