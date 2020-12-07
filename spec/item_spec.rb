@@ -13,5 +13,9 @@ describe Item do
     expect(item.name).to eq name
     expect(item.price).to eq price
     expect(item.quantity).to eq quantity
-  end
+	end
+	
+	it "can be sold and the quantity of the product will be updated" do
+ 		 expect { item.sell }.to change { item.quantity }.by(-1)
+	end
 end
