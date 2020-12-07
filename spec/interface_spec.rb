@@ -42,18 +42,24 @@ describe Interface do
     it 'promts a user to select the item code' do
       expect(subject.put_in_code).to eq('Please select the snack code')
     end
-	end
-	
-	describe "#take_your item" do
-  it "notifies a user that their item is ready for collection" do
-    item = double("item", code: 0o2, name: "Fanta", price: 2.00, quantity: 12)
-    expect(subject.take_your_item(item)).to eq("Please collect your Fanta")
   end
-end
 
-describe "#take_your_change" do
-  it "notifies a user that their change is ready to be collected" do
-    expect(subject.take_your_change("20p")).to eq "Please, don't forget your change: 20p!"
+  describe '#take_your item' do
+    it 'notifies a user that their item is ready for collection' do
+      item = double('item', code: 0o2, name: 'Fanta', price: 2.00, quantity: 12)
+      expect(subject.take_your_item(item)).to eq('Please collect your Fanta')
+    end
   end
-end
+
+  describe '#take_your_change' do
+    it 'notifies a user that their change is ready to be collected' do
+      expect(subject.take_your_change('20p')).to eq "Please, don't forget your change: 20p!"
+    end
+  end
+
+  describe '#no_change_due' do
+    it 'notifies that the user is due no change' do
+      expect(subject.no_change_due).to eq "We don't owe you any change,BYE!😉"
+    end
+  end
 end
