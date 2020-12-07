@@ -24,4 +24,11 @@ describe Coin do
 			expect(coin.quantity).to eq 50
 		end
 	end
+
+	describe "#refund(amount)" do 
+		it "refunds the amount of coins and updates the quantity" do
+			coin.refund(amount(3))
+			expect(coin.quantity).to eq 27
+		end
+	end
 end
