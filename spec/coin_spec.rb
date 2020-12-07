@@ -16,5 +16,12 @@ describe Coin do
       coin2 = Coin.new(0.15)
       expect { coin2.valid? }.to raise_error 'Invalid coin'
     end
-  end
+	end
+	
+	describe "#insert_amount" do
+		it "updates the coin quanity" do 
+			coin.insert_amount(20)
+			expect(coin.quantity).to eq 50
+		end
+	end
 end
