@@ -14,9 +14,13 @@ class Coin
     raise 'Invalid coin' unless VALID_COINS.include?(@value)
 
     VALID_COINS.include?(@value)
-	end
-	
-	def insert(amount)
-  @quantity += amount
-end
+  end
+
+  def insert(amount)
+    @quantity += amount
+  end
+
+  def refund(amount)
+    @quantity -= amount
+  end
 end
