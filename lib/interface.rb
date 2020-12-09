@@ -57,6 +57,6 @@ class Interface
   end
 
   def invalid_coin
-    p "Please only insert valid coins!"
+    p 'Please only insert valid coins!'
   end
 end

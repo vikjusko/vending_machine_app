@@ -62,7 +62,7 @@ class Transaction
   def issue_order_item
     item = @items.list.find { |item| item.code == @selection }
     @complete = true
-    #item.sell
+    # item.sell
     @interface.take_your_item(item)
   end
 

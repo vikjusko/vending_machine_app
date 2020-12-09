@@ -20,22 +20,15 @@ class VendingMachine
 
   def start
     loop do
-    @interface.welcome
-    @interface.item_list(@items)
-    @interface.instructions
-    @interface.request_payment
-    add_coin(gets.chomp)
-    @interface.confirmation_status
-    while gets.chomp != 'yes'
-      @interface.request_payment
+      start_instructions
       add_coin(gets.chomp)
       @interface.confirmation_status
-    end
-    @interface.put_in_code
-    @transaction.place_order(@selection = gets.chomp)
-      if @transaction.complete
-        sell_item
+      while gets.chomp != 'yes'
+        requesting_money
       end
+      @interface.put_in_code
+      @transaction.place_order(@selection = gets.chomp)
+      sell_item if @transaction.complete
     end
   end
 
@@ -64,7 +57,21 @@ class VendingMachine
   end
 
   def sell_item
-    item = @items.list.find{ |item| item.code == @selection.to_i }
+    item = @items.list.find { |item| item.code == @selection.to_i }
     item.sell
   end
+
+  def start_instructions
+    @interface.welcome
+    @interface.item_list(@items)
+    @interface.instructions
+    @interface.request_payment
+  end
+
+  def requesting_money
+    @interface.request_payment
+    add_coin(gets.chomp)
+    @interface.confirmation_status
+  end 
+
 end

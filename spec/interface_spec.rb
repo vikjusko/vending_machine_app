@@ -67,7 +67,7 @@ describe Interface do
 
   describe '#confirmation_status' do
     it 'asks a customer to either confrim finishing insertin coins or continue' do
-			expect(subject.confirmation_status).to eq 'Please select yes if you have put in enough money, no to continue inserting coins'
+      expect(subject.confirmation_status).to eq 'Please select yes if you have put in enough money, no to continue inserting coins'
     end
   end
 
@@ -88,9 +88,9 @@ describe Interface do
     end
   end
 
-  describe "#invalid_coin" do 
-    it "shows a warning message to only insert valid coins into the vending machine" do 
-      expect(subject.invalid_coin).to eq "Please only insert valid coins!"
+  describe '#invalid_coin' do
+    it 'shows a warning message to only insert valid coins into the vending machine' do
+      expect(subject.invalid_coin).to eq 'Please only insert valid coins!'
     end
   end
 end
