@@ -87,4 +87,10 @@ describe Interface do
       expect(subject.invalid_selection).to eq "Sorry, we don't sell this item 😳! Let's try again"
     end
   end
+
+  describe "#invalid_coin" do 
+    it "shows a warning message to only insert valid coins into the vending machine" do 
+      expect(subject.invalid_coin).to eq "Please only insert valid coins!"
+    end
+  end
 end

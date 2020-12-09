@@ -55,4 +55,8 @@ class Interface
   def no_change_due
     p "We don't owe you any change,BYE!😉"
   end
+
+  def invalid_coin
+    p "Please only insert valid coins!"
+  end
 end
