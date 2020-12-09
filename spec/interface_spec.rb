@@ -93,4 +93,10 @@ describe Interface do
       expect(subject.invalid_coin).to eq 'Please only insert valid coins!'
     end
   end
+
+  describe "#finish" do 
+    it "prompts a user to exit if they are finished buying snacks" do
+      expect(subject.finish).to eq "Please select exit if you have enough snacks"
+    end
+  end
 end

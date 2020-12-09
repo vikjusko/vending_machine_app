@@ -3,7 +3,7 @@ require "sinatra/base"
 class Machine < Sinatra::Base
 
 get "/" do
-	"Hello World"
+	"Wonna Snack?!"
 end 
 
 
