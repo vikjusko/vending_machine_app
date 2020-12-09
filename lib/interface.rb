@@ -59,4 +59,8 @@ class Interface
   def invalid_coin
     p 'Please only insert valid coins!'
   end
+
+  def finish
+    p "Please select exit if you have enough snacks"
+  end 
 end

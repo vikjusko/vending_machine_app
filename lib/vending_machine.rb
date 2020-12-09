@@ -26,9 +26,9 @@ class VendingMachine
       while gets.chomp != 'yes'
         requesting_money
       end
-      @interface.put_in_code
-      @transaction.place_order(@selection = gets.chomp)
-      sell_item if @transaction.complete
+      complete_purchase
+      @interface.finish
+      break if finish?
     end
   end
 
@@ -74,4 +74,13 @@ class VendingMachine
     @interface.confirmation_status
   end 
 
+  def complete_purchase
+    @interface.put_in_code
+    @transaction.place_order(@selection = gets.chomp)
+    sell_item if @transaction.complete
+  end 
+
+  def finish?
+    gets.chomp == "exit"
+  end
 end
