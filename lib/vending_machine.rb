@@ -54,7 +54,7 @@ class VendingMachine
     if VALID_COINS.include?(coin.to_i)
       @transaction.add_funds([coin.to_i])
     else
-      'Please only use valid coins'
+      p 'Please only use valid coins'
     end
   end
 end
