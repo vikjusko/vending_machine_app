@@ -5,7 +5,7 @@ require_relative './change'
 require_relative './interface'
 
 class Transaction
-  attr_reader :items, :change, :interface, :funds
+  attr_reader :items, :change, :interface, :funds, :complete
 
   VALID_COINS = [200, 100, 50, 20, 10, 5, 2, 1].freeze
 
@@ -15,6 +15,7 @@ class Transaction
     @change = change
     @interface = interface
     @funds = []
+    @complete = false
   end
 
   def place_order(selection)
@@ -60,7 +61,8 @@ class Transaction
 
   def issue_order_item
     item = @items.list.find { |item| item.code == @selection }
-    item.sell
+    @complete = true
+    #item.sell
     @interface.take_your_item(item)
   end
 

@@ -19,6 +19,7 @@ class VendingMachine
   end
 
   def start
+    loop do
     @interface.welcome
     @interface.item_list(@items)
     @interface.instructions
@@ -32,6 +33,10 @@ class VendingMachine
     end
     @interface.put_in_code
     @transaction.place_order(@selection = gets.chomp)
+      if @transaction.complete
+        sell_item
+      end
+    end
   end
 
   def restock_item(item_name, amount)
@@ -56,5 +61,10 @@ class VendingMachine
     else
       @interface.invalid_coin
     end
+  end
+
+  def sell_item
+    item = @items.list.find{ |item| item.code == @selection.to_i }
+    item.sell
   end
 end
