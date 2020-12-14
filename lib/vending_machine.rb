@@ -8,7 +8,7 @@ require_relative './transaction'
 class VendingMachine
   VALID_COINS = [200, 100, 50, 20, 10, 5, 2, 1].freeze
 
-  attr_reader :items, :change, :profit, :interface, :selection, :transaction
+  attr_reader :items, :change, :profit, :interface, :selection, :transaction, :history
 
   def initialize(itemsClass = Items, changeClass = Change, interfaceClass = Interface)
     @selection = nil
@@ -16,6 +16,7 @@ class VendingMachine
     @change = changeClass.new
     @interface = interfaceClass.new
     @transaction = Transaction.new
+    @history = []
   end
 
   def start
@@ -77,6 +78,7 @@ class VendingMachine
   def complete_purchase
     @interface.put_in_code
     @transaction.place_order(@selection = gets.chomp)
+    @history << @selection
     sell_item if @transaction.complete
   end 
 

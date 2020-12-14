@@ -5,7 +5,7 @@ require_relative './change'
 require_relative './interface'
 
 class Transaction
-  attr_reader :items, :change, :interface, :funds, :complete
+  attr_reader :items, :change, :interface, :funds, :complete, :history
 
   VALID_COINS = [200, 100, 50, 20, 10, 5, 2, 1].freeze
 
@@ -16,6 +16,7 @@ class Transaction
     @interface = interface
     @funds = []
     @complete = false
+    @history = []
   end
 
   def place_order(selection)
