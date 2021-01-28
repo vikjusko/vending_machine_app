@@ -27,7 +27,10 @@ class VendingMachine
       while gets.chomp != 'yes'
         requesting_money
       end
-      complete_purchase
+      @interface.put_in_code
+      @transaction.place_order(@selection = gets.chomp)
+      @history << @selection
+      sell_item if @transaction.complete
       @interface.finish
       break if finish?
     end
@@ -46,6 +49,13 @@ class VendingMachine
     coin = @change.coins[coin_index]
     coin.insert(amount)
   end
+
+
+    def most_popular_items
+      a = @history.inject(Hash.new(0)) { |h, e| h[e] += 1; h }
+      a.sort_by { |k, v| v }.reverse
+      return a.keys[1..3]
+    end 
 
   private
 
@@ -85,4 +95,6 @@ class VendingMachine
   def finish?
     gets.chomp == "exit"
   end
+
+
 end
